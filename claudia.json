@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "onfido-webhooks-lambda-executor",
+    "name": "onfido-webhooks-lambda",
+    "region": "us-west-1"
+  },
+  "api": {
+    "id": "stusx3uj7l"
+  }
+}

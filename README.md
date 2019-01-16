@@ -1,22 +1,22 @@
-#Onfido Webhooks via Amazon Lambda  
+# Onfido Webhooks via Amazon Lambda
 An easy to deploy via Claudia express app in node.  
 
-##Prerequisites  
+## Prerequisites
 - Node.js  
 - External MongoDB server with user that has remote access  
 - AWS CLI preconfigured  
-   `npm install -g aws-cli`  
-   `aws configure`  
+   `$ npm install -g aws-cli`  
+   `$ aws configure`  
 - Claudia.js  
-   `npm install -g claudia`
+   `$ npm install -g claudia`
 
-##Dev build process
+## Dev build process
 `$ npm install`  
-`$ claudia generate-serverless-express-proxy --express-module api`
+`$ claudia generate-serverless-express-proxy --express-module api`  
 `$ claudia create --handler lambda.handler --deploy-proxy-api --region us-west-1`  
-A new Lambda function will be created under the name "onfido-webhooks-lambda" under the us-west-1 region.
+A new Lambda function will be created under the name "onfido-webhooks-lambda" under the us-west-1 region.  
 
-##Environment variables  
+## Environment variables  
 Environment variables are configured from the AWS console under the Lambda function section.  
 Locate your Lambda function and add the following environment variables:  
 
@@ -27,7 +27,7 @@ Locate your Lambda function and add the following environment variables:
    - DB_USER  
    - DB_PASS
 
-##Making changes  
+## Making changes  
 To make updates to your repository simply edit the file locally and run:  
 `$ claudia update`  
 

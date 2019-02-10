@@ -20,8 +20,8 @@ async function postOnfido(req, res) {
     const status = req.body.payload.object.status;
     const completedAt = req.body.payload.object.completed_at;
     const href = req.body.payload.object.href;
-    const token = crypto.createHmac('sha1', process.env.ONFIDO_WEBHOOK_SECRET);
-    .update(JSON.stringify(req.body)).digest('hex');
+    const token = crypto.createHmac('sha1', process.env.ONFIDO_WEBHOOK_SECRET)
+      .update(JSON.stringify(req.body)).digest('hex');
     if (xheader === token) {
       onfidoLog.log(onfidoId, action, resourceType, status,
           completedAt, href);
